@@ -1,9 +1,10 @@
 (function( $ ){
-    $.fn.vskModalForm = function(modalId) {
+    $.fn.vskModalForm = function(modalId, additionalModalClasses = "") {
         var element = $(this);
         var VskModalForm = {
             element: element,
             modalId : modalId,
+            additionalModalClasses : additionalModalClasses,
             init: function () {
                 element.trigger('vskModalForm:init', this);
                 this.setClickEventLising();
@@ -194,7 +195,7 @@
             },
             modalTempldate : function () {
                 return '<div class="modal fade vskModalForm" id="'+this.modalId+'" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">\n' +
-                '  <div class="modal-dialog" role="document">\n' +
+                '  <div class="modal-dialog '+this.additionalModalClasses+'" role="document">\n' +
                 '    <div class="modal-content">\n' +
                 '      <div class="modal-header">\n' +
                 '        <h5 class="modal-title" id="exampleModalLabel"></h5>\n' +
