@@ -6,22 +6,22 @@ Assets заменены на boostrap4
 
 Добавлена поддержка доп. классов модального окна. [Подробнее о классах](https://getbootstrap.su/docs/4.6/components/modal/).
 
-Installation
+Установка
 ------------
-The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
-
-Either run
-
+Добавить в файл `composer.json`:
 ```
-composer require vsk/modal-form
+"repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/elisevgeniy/modal-form"
+        }
+    ]
+    
+"require": {
+        "vsk/modal-form": "dev-bootstrap4"
+    },
 ```
-or add
-
-```json
-"vsk/modal-form" : "~1.0.0"
-```
-
-to the require section of your application's `composer.json` file.
+После добавления выполнить `composer require "vsk/modal-form"`
 
 
 Usage
