@@ -3,6 +3,7 @@ modalForm for Yii2
 Изменения
 ------------
 Assets заменены на boostrap4
+Добавлена поддержка доп. классов модального окна. [Подробнее о классах](https://getbootstrap.su/docs/4.6/components/modal/).
 
 Installation
 ------------
@@ -78,6 +79,7 @@ Include in you view
 <?php
 
 echo \vsk\modalForm\ModalFormWidget::widget([
+                     'additionalModalClasses' => 'modal-xl',
                      'template' => function ($widget) {
                          $id = $widget->getId();
                          return "<button id='{$id}' data-modal-url='/adminx24/test/modal-form'>TEST</button>";
