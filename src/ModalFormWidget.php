@@ -23,6 +23,11 @@ class ModalFormWidget extends Widget
     public $template;
 
     /**
+     * @var callable
+     */
+    public $additionalModalClasses = "";
+
+    /**
      * @return string|void
      */
     public function run()
@@ -35,7 +40,7 @@ class ModalFormWidget extends Widget
         if ($this->template instanceof \Closure) {
             $id = $this->getId();
             $modalId = $id.'-'.uniqid();
-            $view->registerJs("$('#$id').vskModalForm('$modalId').init();");
+            $view->registerJs("$('#$id').vskModalForm('$modalId', '$this->additionalModalClasses').init();");
             return call_user_func($this->template, $this);
         } else {
             throw new Exception('Set templdate for url');
